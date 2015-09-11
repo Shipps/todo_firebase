@@ -1,0 +1,34 @@
+<div class="todoList">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Add your task here" ng-model="taskName" ng-keyup="addTask($event)" />  
+      <div class="input-group-btn">
+        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">Priority <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">Normal</a></li>
+          <li><a href="#">Medium</a></li>
+          <li><a href="#">Critical</a></li>
+        </ul>
+      </div>
+    </div>
+    <br/><br/>
+    
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{taskListName}}</h3>
+      </div>
+      <div class="panel-body list-group">
+        <div class="list-group-item" ng-repeat="listItem in currentListObj">
+			<label class="checkbox checkbox-lg">
+				<input type="checkbox" name="checkbox" ng-model="listItem.completed" />
+				<i></i>
+				<p class="completed-{{listItem.completed}}" contenteditable="true" ng-model="listItem.name">{{listItem.name}}</p>
+				<p class="glyphicon glyphicon-remove pull-right" ng-click="deleteTask($index)"></p>
+			</label>
+        </div>
+      </div>
+    </div>
+
+    
+    <button class="btn btn-primary" ng-click="update()">Update</button>
+    <button class="btn btn-primary" ng-click="cancel()">Cancel List</button>
+</div>

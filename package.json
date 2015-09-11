@@ -1,0 +1,11 @@
+{
+  "version": "0.0.0",
+  "name": "angular-first-app",
+  "description": "An example app for AngularJS",
+  "devDependencies": {
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  }
+}

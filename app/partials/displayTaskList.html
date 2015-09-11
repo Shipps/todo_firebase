@@ -1,0 +1,15 @@
+<div class="tasklist-details">
+    <div class="panel panel-primary" ng-repeat="task in TaskListRef">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{task.title}}</h3>
+            <span class="glyphicon glyphicon-trash" ng-click="deleteTaskList(task.title)"></span>
+          </div>
+          <div class="panel-body list-group" ng-click="viewTaskList('/task/' + task.title)">
+            View Task List
+          </div>
+    </div>
+        
+    <button class="btn btn-primary" ng-click="launchList('/new')">Create New List</button>
+   
+</div> 
+
